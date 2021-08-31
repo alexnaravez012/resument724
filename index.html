@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.2/dist/css/uikit.min.css" />
+    <link rel="stylesheet" href="./assets/images/icons/fontawesome/css/all.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/icons/fontawesome/css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Tienda 724</title>
+</head>
+
+<body>
+    <div>
+        <!-- Navbar -->
+        <div class="navbar-resposnsive uk-flex uk-flex-middle uk-flex-between uk-position-fixed">
+            <div>
+                <img class="icon-bars-t724-responsive" src="./assets/icons/menu.png" alt="">
+                <img class="logo-t724-responsive" src="./assets/images/tienda724.png" alt="">
+            </div>
+            <div class="uk-flex uk-flex-middle">
+                <h5 class="uk-margin-remove padding-horizontal-10 font-weight-800">Resumen de tu negocio</h5>
+                <h5 class="uk-margin-remove">Martes 27 de Julio 2021</h5>
+            </div>
+            <div class="uk-flex uk-flex-middle cursor-pointer">
+                <i class="fas fa-caret-down"></i>
+                <h4 class="uk-margin-remove font-weight-800 padding-horizontal-10 color-green">Mireya Mopan</h4>
+                <img class="icon-user-t724-responsive" src="./assets/icons/icono-de-usuario.png" alt="">
+            </div>
+        </div>
+        <div class="uk-flex uk-margin-remove-bottom uk-padding-remove-bottom" style="height: 555px !important; padding-top: 70px;">
+            <div class="scroll-top">
+                <div class="padding-horizontal-26 container-ventas-padding">
+                    <div class="uk-flex uk-flex-middle uk-flex uk-flex-between padding-bottom-10">
+                        <h5 class="uk-margin-remove uk-text-bold">Ventas</h5>
+                        <h5 class="uk-margin-remove uk-text-bold">Utilidades</h5>
+                    </div>
+                    <div class="uk-flex uk-flex-middle uk-flex-between">
+                        <h6 class="uk-margin-remove widht-100 font-weight-600">Día 4:</h6>
+                        <h6 class="uk-margin-remove widht-100 uk-text-right">62,000$</h6>
+                        <h6 class="uk-margin-remove widht-100 uk-text-right color-green">+ 30,000$</h6>
+                    </div>
+                    <div class="uk-flex uk-flex-middle uk-flex-between padding-vertical-5">
+                        <h6 class="uk-margin-remove widht-100 font-weight-600">Semana 1:</h6>
+                        <h6 class="uk-margin-remove widht-100 uk-text-right">726,000$</h6>
+                        <h6 class="uk-margin-remove widht-100 uk-text-right color-green">+ 420,000$</h6>
+                    </div>
+                    <div class="uk-flex uk-flex-middle uk-flex-between">
+                        <h6 class="uk-margin-remove widht-100 font-weight-600">Mes Agosto:</h6>
+                        <h6 class="uk-margin-remove widht-100 uk-text-right">2,425,300$</h6>
+                        <h6 class="uk-margin-remove widht-100 uk-text-right color-green">+ 1,050,300$</h6>
+                    </div>
+                    <div class="uk-flex uk-flex-middle uk-flex-between padding-top-30">
+                        <div class="uk-flex uk-flex-middle">
+                            <i class="fas fa-circle font-size-10 color-yellow-point"></i>
+                            <h6 class="uk-margin-remove font-weight-600 padding-horizontal-5 font-size-11">Promedio de ventas Diario:</h6>
+                            <h6 class="uk-margin-remove font-size-9">300,000$</h6>
+                        </div>
+                        <div class="uk-flex uk-flex-middle">
+                            <i class="fas fa-circle font-size-10 color-green-point font-size-9"></i>
+                            <h6 class="uk-margin-remove font-weight-600 padding-horizontal-5 font-size-11">Mayor venta</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="scroll-horizontal">
+                    <canvas class="uk-margin-remove" height="260" id="myChart"></canvas>
+                </div>
+            </div>
+            <div>
+                <div class="padding-horizontal-26 scroll-top">
+                    <div class="uk-flex uk-flex-middle" style="padding-top: 27px;">
+                        <h5 class="uk-margin-remove uk-text-bold">Mes:</h5>
+                        <div>
+                            <div uk-form-custom="target: > * > span:first-child">
+                                <select style="padding-left: 15px !important;">
+                                    <option>Enero</option>
+                                    <option>Febrero</option>
+                                    <option>Marzo</option>
+                                    <option>Abril</option>
+                                    <option>Mayo</option>
+                                    <option>Junio</option>
+                                    <option>Julio</option>
+                                    <option>Agosto</option>
+                                    <option>Septiembre</option>
+                                    <option>Octubre</option>
+                                    <option>Noviembre</option>
+                                    <option>Diciembre</option>
+                                </select>
+                                <button class="select-month" type="button" tabindex="-1">
+                                    <span></span>
+                                    <span uk-icon="icon: triangle-down"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="padding-top-20">
+                        <button class="buttons-filter">Por Ingresos</button>
+                        <button class="buttons-filter">Por Utilidades</button>
+                        <button class="buttons-filter">Por Unidades</button>
+                    </div>
+                    <div style="width: 260px;">
+                        <div class="uk-flex uk-flex-middle padding-top-20">
+                            <div class="uk-position-relative">
+                                <h4 class="uk-text-bold uk-position-absolute">1</h4>
+                                <div class="img-products-filter" style="background-image: url(./assets/images/productos/producto-1.png);" uk-img></div>
+                            </div>
+                            <div>
+                                <h6 class="uk-margin-remove uk-text-bold font-size-12">Cerveza poker 350 ml</h6>
+                                <div class="uk-flex uk-flex-middle padding-vertical-5">
+                                    <h6 class="uk-margin-remove font-size-12">Ventas:</h5>
+                                        <h6 class="uk-margin-remove padding-horizontal-5 font-size-12">325,000$</h6>
+                                </div>
+                                <div class="uk-flex uk-flex-middle">
+                                    <h6 class="uk-margin-remove font-size-12">Utilidades:</h6>
+                                    <h6 class="uk-margin-remove padding-horizontal-5 font-size-12">233,000$</h6>
+                                </div>
+                                <div class="uk-flex uk-flex-middle padding-vertical-5">
+                                    <h6 class="uk-margin-remove font-size-12">Unidades vendidas:</h6>
+                                    <h6 class="uk-margin-remove padding-horizontal-5 font-size-12">427</h6>
+                                </div>
+                                <div class="uk-flex uk-flex-middle">
+                                    <h6 class="uk-margin-remove font-size-12">Unidades existentes:</h6>
+                                    <h6 class="uk-margin-remove padding-horizontal-5 font-size-12">56</h6>
+                                </div>
+                                <div class="uk-flex uk-flex-middle padding-vertical-5">
+                                    <h6 class="uk-margin-remove font-size-12">Días:</h6>
+                                    <h6 class="uk-margin-remove padding-horizontal-5 font-size-12">Viernes y Sábado</h6>
+                                </div>
+                                <div class="uk-flex uk-flex-middle">
+                                    <h6 class="uk-margin-remove font-size-12">Horas:</h6>
+                                    <h6 class="uk-margin-remove padding-horizontal-5 font-size-12">8:45 - 9:20 pm</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uk-flex uk-flex-middle padding-top-20">
+                            <div class="uk-position-relative">
+                                <h4 class="uk-text-bold uk-position-absolute padding-top-5">2</h4>
+                                <div class="img-products-filter" style="background-image: url(./assets/images/productos/producto-3.png);" uk-img></div>
+                            </div>
+                            <div>
+                                <h6 class="uk-margin-remove uk-text-bold font-size-12">Cocacola 1,5 lt</h6>
+                                <div class="uk-flex uk-flex-middle padding-vertical-5">
+                                    <h6 class="uk-margin-remove font-size-12">Ventas:</h6>
+                                    <h6 class="uk-margin-remove padding-horizontal-5 font-size-12">325,000$</h6>
+                                </div>
+                                <div class="uk-flex uk-flex-middle">
+                                    <h6 class="uk-margin-remove font-size-12">Utilidades:</h6>
+                                    <h6 class="uk-margin-remove padding-horizontal-5 font-size-12">233,000$</h6>
+                                </div>
+                                <div class="uk-flex uk-flex-middle padding-vertical-5">
+                                    <h6 class="uk-margin-remove font-size-12">Unidades vendidas:</h6>
+                                    <h6 class="uk-margin-remove padding-horizontal-5 font-size-12">427</h6>
+                                </div>
+                                <div class="uk-flex uk-flex-middle">
+                                    <h6 class="uk-margin-remove font-size-12">Unidades existentes:</h6>
+                                    <h6 class="uk-margin-remove padding-horizontal-5 font-size-12">56</h6>
+                                </div>
+                                <div class="uk-flex uk-flex-middle padding-vertical-5">
+                                    <h6 class="uk-margin-remove font-size-12">Días:</h6>
+                                    <h6 class="uk-margin-remove padding-horizontal-5 font-size-12">Viernes y Sábado</h6>
+                                </div>
+                                <div class="uk-flex uk-flex-middle">
+                                    <h6 class="uk-margin-remove font-size-12">Horas:</h6>
+                                    <h6 class="uk-margin-remove padding-horizontal-5 font-size-12">8:45 - 9:20 pm</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uk-flex uk-flex-middle padding-top-20">
+                            <div class="uk-position-relative">
+                                <h4 class="uk-text-bold uk-position-absolute padding-top-5">3</h4>
+                                <div class="img-products-filter" style="background-image: url(./assets/images/productos/producto-2.png);" uk-img></div>
+                            </div>
+                            <div>
+                                <h6 class="uk-margin-remove uk-text-bold font-size-12">Cerveza Aguila 350 ml</h6>
+                                <div class="uk-flex uk-flex-middle padding-vertical-5">
+                                    <h6 class="uk-margin-remove font-size-12">Ventas:</h6>
+                                    <h6 class="uk-margin-remove padding-horizontal-5 font-size-12">325,000$</h6>
+                                </div>
+                                <div class="uk-flex uk-flex-middle">
+                                    <h6 class="uk-margin-remove font-size-12">Utilidades:</h6>
+                                    <h6 class="uk-margin-remove padding-horizontal-5 font-size-12">233,000$</h6>
+                                </div>
+                                <div class="uk-flex uk-flex-middle padding-vertical-5">
+                                    <h6 class="uk-margin-remove font-size-12">Unidades vendidas:</h6>
+                                    <h6 class="uk-margin-remove padding-horizontal-5 font-size-12">427</h6>
+                                </div>
+                                <div class="uk-flex uk-flex-middle">
+                                    <h6 class="uk-margin-remove font-size-12">Unidades existentes:</h6>
+                                    <h6 class="uk-margin-remove padding-horizontal-5 font-size-12">56</h6>
+                                </div>
+                                <div class="uk-flex uk-flex-middle padding-vertical-5">
+                                    <h6 class="uk-margin-remove font-size-12">Días:</h6>
+                                    <h6 class="uk-margin-remove padding-horizontal-5 font-size-12">Viernes y Sábado</h6>
+                                </div>
+                                <div class="uk-flex uk-flex-middle">
+                                    <h6 class="uk-margin-remove font-size-12">Horas:</h6>
+                                    <h6 class="uk-margin-remove padding-horizontal-5 font-size-12">8:45 - 9:20 pm</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-flex">
+                <div class="scroll-top">
+                    <div class="padding-horizontal-26">
+                        <div>
+                            <div class="uk-flex uk-flex-middle padding-top-30">
+                                <h5 class="uk-margin-remove widht-150 uk-text-bold">Inventario</h5>
+                                <h6 class="uk-margin-remove widht-150 uk-text-right"> <span>2670</span> productos</h6>
+                            </div>
+                            <div class="uk-flex uk-flex-middle padding-top-10">
+                                <h6 class="uk-margin-remove widht-150 font-size-12 color-blue uk-text-bold padding-vertical-5">Valor total del inventario:</h6>
+                                <h6 class="uk-margin-remove widht-150 font-size-12 uk-text-right color-blue uk-text-bold">12,624,700$</h6>
+                            </div>
+                            <div class="uk-flex uk-flex-middle">
+                                <h6 class="uk-margin-remove widht-150 font-size-12 color-red-font uk-text-bold">Costo total del inventario:</h6>
+                                <h6 class="uk-margin-remove widht-150 font-size-12 uk-text-right color-red-font uk-text-bold">8,924,700$$</h6>
+                            </div>
+                        </div>
+                        <div class="uk-flex uk-flex-between padding-top-30">
+                            <h6 class="uk-margin-remove font-size-12">Por producto:</h6>
+                            <input class="input-inventario uk-text-center" type="text" placeholder="Escribe el nombre o el código" name="" id="">
+                        </div>
+                        <div class="padding-top-20">
+                            <div class="uk-flex uk-flex-middle uk-flex-between">
+                                <div class="uk-flex uk-flex-middle">
+                                    <h6 class="uk-margin-remove uk-text-bold uk-text-muted widht-80 font-size-12">Ventas:</h6>
+                                    <h6 class="uk-margin-remove padding-horizontal-5 font-size-12">---</h6>
+                                </div>
+                                <div class="uk-flex uk-flex-middle">
+                                    <h6 class="uk-margin-remove uk-text-bold uk-text-muted widht-170 font-size-12">Unidades vendidas:</h6>
+                                    <h6 class="uk-margin-remove padding-horizontal-5 font-size-12">---</h6>
+                                </div>
+                            </div>
+                            <div class="uk-flex uk-flex-middle uk-flex-between padding-vertical-5">
+                                <div class="uk-flex uk-flex-middle">
+                                    <h6 class="uk-margin-remove uk-text-bold uk-text-muted widht-80 font-size-12">Utilidades:</h6>
+                                    <h6 class="uk-margin-remove padding-horizontal-5 font-size-12">---</h6>
+                                </div>
+                                <div class="uk-flex uk-flex-middle">
+                                    <h6 class="uk-margin-remove uk-text-bold uk-text-muted widht-170 font-size-12">Unidades existentes:</h6>
+                                    <h6 class="uk-margin-remove padding-horizontal-5 font-size-12">---</h6>
+                                </div>
+                            </div>
+                            <div class="uk-flex uk-flex-middle uk-flex-between">
+                                <div class="uk-flex uk-flex-middle">
+                                    <h6 class="uk-margin-remove uk-text-bold uk-text-muted widht-80 font-size-12">Días:</h6>
+                                    <h6 class="uk-margin-remove padding-horizontal-5 font-size-12">---</h6>
+                                </div>
+                                <div class="uk-flex uk-flex-middle" style="padding-right: 125px;">
+                                    <h6 class="uk-margin-remove uk-text-bold uk-text-muted font-size-12">Horas:</h6>
+                                    <h6 class="uk-margin-remove padding-horizontal-10 font-size-12">---</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="padding-top-30">
+                            <h6 class="uk-margin-remove color-marron uk-text-bold font-size-11">Categorías</h6>
+                        </div>
+                    </div>
+                    <div class="container-desplegable margin-top-10" uk-toggle="target: .caret-1">
+                        <div class="uk-flex uk-flex-middle uk-flex-between padding-top-5" uk-toggle="target: #desp-1">
+                            <h6 class="uk-margin-remove font-weight-800 widht-150 font-size-12">Alimentos</h6>
+                            <h6 class="uk-margin-remove font-weight-800 widht-150 font-size-12"> <span>123</span> productos</h6>
+                            <div>
+                                <i class="fas fa-caret-left color-black caret-1 font-size-12"></i>
+                                <i class="fas fa-caret-down color-black caret-1 font-size-12" hidden></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="desp-1" hidden>
+                        <div class="padding-horizontal-26">
+                            <div class="uk-flex uk-flex-middle padding-top-10">
+                                <h6 class="uk-margin-remove widht-150 uk-text-muted uk-text-bold uk-text-italic font-size-12">Producto más vendido:</h6>
+                                <h6 class="uk-margin-remove widht-150 uk-text-bold uk-text-italic font-size-12">Doritos 120 gr</h6>
+                            </div>
+                            <div class="uk-flex uk-flex-middle padding-top-10">
+                                <h6 class="uk-margin-remove widht-150 color-blue uk-text-bold uk-text-italic font-size-12">Valor Alimentos</h6>
+                                <h6 class="uk-margin-remove widht-150 color-blue uk-text-bold uk-text-italic font-size-12">432,000$</h6>
+                            </div>
+                            <div class="uk-flex uk-flex-middle padding-top-10">
+                                <h6 class="uk-margin-remove widht-150 color-red-font uk-text-bold uk-text-italic font-size-12">Costo Alimentos</h6>
+                                <h6 class="uk-margin-remove widht-150 color-red-font uk-text-bold uk-text-italic font-size-12">317,000$</h6>
+                            </div>
+                        </div>
+                        <div class="container-subdesplegable margin-top-10" uk-toggle="target: .caret-2">
+                            <div class="uk-flex uk-flex-middle uk-flex-between padding-top-3" uk-toggle="target: #desp-1-1">
+                                <h6 class="uk-margin-remove uk-text-bold color-grey-font widht-150 font-size-11">Abarrotes</h6>
+                                <h6 class="uk-margin-remove uk-text-bold color-grey-font widht-150 font-size-11"> <span>23</span> productos</h6>
+                                <div>
+                                    <i class="fas fa-caret-left color-grey-font caret-2 font-size-12"></i>
+                                    <i class="fas fa-caret-down color-grey-font caret-2 font-size-12" hidden></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="desp-1-1" hidden>
+                            <div class="padding-horizontal-26">
+                                <div class="uk-flex uk-flex-middle padding-top-10">
+                                    <h6 class="uk-margin-remove widht-150 uk-text-muted uk-text-bold uk-text-italic font-size-12">Producto más vendido:</h6>
+                                    <h6 class="uk-margin-remove widht-150 uk-text-bold uk-text-italic font-size-12">Jabon Rey</h6>
+                                </div>
+                                <div class="uk-flex uk-flex-middle padding-top-10">
+                                    <h6 class="uk-margin-remove widht-150 color-blue uk-text-bold uk-text-italic font-size-12">Valor Alimentos</h6>
+                                    <h6 class="uk-margin-remove widht-150 color-blue uk-text-bold uk-text-italic font-size-12">33,000$</h6>
+                                </div>
+                                <div class="uk-flex uk-flex-middle padding-top-10">
+                                    <h6 class="uk-margin-remove widht-150 color-red-font uk-text-bold uk-text-italic font-size-12">Costo Alimentos</h6>
+                                    <h6 class="uk-margin-remove widht-150 color-red-font uk-text-bold uk-text-italic font-size-12">23,000$</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-subdesplegable margin-top-10">
+                            <div class="uk-flex uk-flex-middle uk-flex-between padding-top-3">
+                                <h6 class="uk-margin-remove uk-text-bold color-grey-font widht-150 font-size-11">Cacharrería</h6>
+                                <h6 class="uk-margin-remove uk-text-bold color-grey-font widht-150 font-size-11"> <span>13</span> productos</h6>
+                                <div>
+                                    <i class="fas fa-caret-left color-grey-font font-size-12"></i>
+                                    <i class="fas fa-caret-down color-grey-font font-size-12" hidden></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-subdesplegable margin-top-10">
+                            <div class="uk-flex uk-flex-middle uk-flex-between padding-top-3">
+                                <h6 class="uk-margin-remove uk-text-bold color-grey-font widht-150 font-size-11">condímentos</h6>
+                                <h6 class="uk-margin-remove uk-text-bold color-grey-font widht-150 font-size-11"> <span>09</span> productos</h6>
+                                <div>
+                                    <i class="fas fa-caret-left color-grey-font toggle font-size-12"></i>
+                                    <i class="fas fa-caret-down color-grey-font toggle font-size-12" hidden></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-desplegable margin-top-10">
+                        <div class="uk-flex uk-flex-middle uk-flex-between padding-top-5">
+                            <h5 class="uk-margin-remove font-weight-800 widht-150 font-size-12">Bebidas</h5>
+                            <h5 class="uk-margin-remove font-weight-800 widht-150 font-size-12"> <span>15</span> productos</h5>
+                            <div>
+                                <i class="fas fa-caret-left color-black caret-1 font-size-12"></i>
+                                <i class="fas fa-caret-down color-black caret-1 font-size-12" hidden></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-desplegable margin-top-10">
+                        <div class="uk-flex uk-flex-middle uk-flex-between padding-top-5">
+                            <h5 class="uk-margin-remove font-weight-800 widht-150 font-size-12">Abarrotes</h5>
+                            <h5 class="uk-margin-remove font-weight-800 widht-150 font-size-12"> <span>45</span> productos</h5>
+                            <div>
+                                <i class="fas fa-caret-left color-black caret-1 font-size-12"></i>
+                                <i class="fas fa-caret-down color-black caret-1 font-size-12" hidden></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-desplegable margin-top-10">
+                        <div class="uk-flex uk-flex-middle uk-flex-between padding-top-5">
+                            <h5 class="uk-margin-remove font-weight-800 widht-150 font-size-12">Miscelanea</h5>
+                            <h5 class="uk-margin-remove font-weight-800 widht-150 font-size-12"> <span>27</span> productos</h5>
+                            <div>
+                                <i class="fas fa-caret-left color-black caret-1 font-size-12"></i>
+                                <i class="fas fa-caret-down color-black caret-1 font-size-12" hidden></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="width: 320px; padding-top: 8px;">
+                    <div class="uk-flex padding-container-cart uk-flex-between">
+                        <h5 class="uk-margin-remove uk-text-bold">Cartera</h5>
+                        <div class="uk-flex">
+                            <img class="icono-admiracion" style="margin-top: 5px;" src="./assets/icons/Signo-de-admiracion.png" alt="">
+                            <div>
+                                <h6 class="uk-margin-remove widht-150 font-size-12">Tiene facturas a punto de vencer</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="padding-horizontal-30" style="padding-top: 22px;">
+                        <h6 class="uk-margin-remove uk-text-bold font-size-12">Pagos pendientes:</h6>
+                    </div>
+                    <div>
+                        <div class="uk-flex uk-flex-middle padding-horizontal-30 padding-top-30">
+                            <h6 class="uk-margin-remove uk-text-bold font-size-12">Ordenar por:</h6>
+                            <div>
+                                <div uk-form-custom="target: > * > span:first-child">
+                                    <select>
+                                        <option>Fecha de vencimiento</option>
+                                        <option>Option 2</option>
+                                        <option>Option 3</option>
+                                    </select>
+                                    <button class="select-orderar-por" type="button" tabindex="-1">
+                                        <span></span>
+                                        <span uk-icon="icon: triangle-down"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="padding-horizontal-30 padding-top-10">
+                            <div class="uk-flex uk-flex-middle uk-flex-between padding-bottom-5">
+                                <h6 class="uk-margin-remove widht-100 uk-text-bold font-size-12">Bavaria</h6>
+                                <h6 class="uk-margin-remove widht-100 font-size-12">150,000$</h6>
+                                <div class="uk-flex uk-flex-middle">
+                                    <h6 class="uk-margin-remove color-red font-size-12">02/09/2021</h6>
+                                    <img class="icono-admiracion-cart" src="./assets/icons/Signo-de-admiracion.png" alt="">
+                                </div>
+                            </div>
+                            <div class="uk-flex uk-flex-middle uk-flex-between padding-bottom-5">
+                                <h6 class="uk-margin-remove widht-100 uk-text-bold font-size-12">Colanta</h6>
+                                <h6 class="uk-margin-remove widht-100 font-size-12">65,000$</h6>
+                                <div class="uk-flex uk-flex-middle">
+                                    <h6 class="uk-margin-remove color-red font-size-12">05/09/2021</h6>
+                                    <img class="icono-admiracion-cart" src="./assets/icons/Signo-de-admiracion.png" alt="">
+                                </div>
+                            </div>
+                            <div class="uk-flex uk-flex-middle uk-flex-between padding-bottom-5">
+                                <h6 class="uk-margin-remove widht-100 uk-text-bold font-size-12">Tienda724</h6>
+                                <h6 class="uk-margin-remove widht-100 font-size-12">70,000$</h6>
+                                <div class="uk-flex uk-flex-middle">
+                                    <h6 class="uk-margin-remove font-size-12">15/09/2021</h6>
+                                    <img class="icono-admiracion-cart" src="" alt="">
+                                </div>
+                            </div>
+                            <div class="uk-flex uk-flex-middle uk-flex-between padding-bottom-5">
+                                <h6 class="uk-margin-remove widht-100 uk-text-bold font-size-12">Distrijass</h6>
+                                <h6 class="uk-margin-remove widht-100 font-size-12">45,000$</h6>
+                                <div class="uk-flex uk-flex-middle">
+                                    <h6 class="uk-margin-remove font-size-12">25/09/2021</h6>
+                                    <img class="icono-admiracion-cart" src="" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="padding-horizontal-30" style="padding-top: 40px;">
+                            <h5 class="uk-margin-remove uk-text-bold font-size-12">Cobros pendientes:</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.2/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.2/dist/js/uikit-icons.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var ctx = document.getElementById('myChart');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
+                datasets: [{
+                    data: [, 150.000, 480.000, 590.000, 403.000, 280.000, , ],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        display: true,
+                        title: {
+                            display: true,
+                            text: 'Días de la semana'
+                        }
+                    },
+                    y: {
+                        beginAtZero: true
+                    }
+
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>
